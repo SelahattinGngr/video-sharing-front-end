@@ -1,27 +1,17 @@
 "use client";
-import { Signup, signupScheme } from "./scheme";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { CalendarIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
-import { Calendar } from "@/components/ui/calendar";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Signup, signupScheme } from "./scheme";
 
 export function SignupForm() {
   const form = useForm<Signup>({
@@ -33,7 +23,6 @@ export function SignupForm() {
       email: "",
       password: "",
       confirmPassword: "",
-      birthday: new Date(),
     },
   });
 
@@ -79,7 +68,7 @@ export function SignupForm() {
             )}
           />
         </div>
-        <FormField
+        {/* <FormField
           control={form.control}
           name="birthday"
           render={({ field }) => (
@@ -119,7 +108,7 @@ export function SignupForm() {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
         <FormField
           control={form.control}
           name="userName"

@@ -13,7 +13,6 @@ export const signupScheme = z
         "Your password must be 8+ characters, with uppercase, lowercase, number, and special character.",
       ),
     confirmPassword: z.string(),
-    birthday: z.date(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match.",
